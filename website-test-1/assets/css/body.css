@@ -1,0 +1,22 @@
+.social-img {
+    width: 5%;
+    height: 5%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+.project-img {
+    width: 6%;
+    height: 6%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20%;
+    transition: all 0.3s ease-in-out;
+}
+
+.github-project-name {
+    text-decoration: none;
+    color: black;
+}
