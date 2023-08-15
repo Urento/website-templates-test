@@ -1,24 +1,39 @@
-const darkModeButton = document.querySelector("#dark-mode-button");
-const darkMode = localStorage.getItem("darkMode");
+const darkModeButton = document.getElementById("dark-mode-button");
+const darkMode = () => {
+  if (
+    localStorage.getItem("darkMode") ||
+    localStorage.getItem("darkMode") !== null
+  )
+    return true;
+  else return false;
+};
+//add this later: window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 const hasDarkMode = () => {
-  const deviceSettings = window.matchMedia(
-    "(prefers-color-scheme: dark)"
-  ).matches;
-
-  if (darkMode === null || darkMode === "false" || !deviceSettings)
-    return false;
+  if (darkMode === null || darkMode === "false") return false;
   else return true;
 };
 
+console.log("hasDarkMode function: " + hasDarkMode());
+
 if (hasDarkMode()) {
-  document.querySelector("link[rel='stylesheet']").href = "dark-mode.css";
+  document.querySelector("link[rel='stylesheet']").href =
+    "assets/css/dark-mode.css";
   darkModeButton.checked = true;
+  console.log("darkmode from function");
 } else {
-  document.querySelector("link[rel='stylesheet']").href = "style.css";
+  document.querySelector("link[rel='stylesheet']").href =
+    "assets/css/style.css";
+  console.log("no darkmode from function");
 }
 
-const enableDarkMode = () => {
-  document.body.classList.add("dark-mode");
-  localStorage.setItem("darkMode", true);
+const changeColorMode = () => {
+  if (!hasDarkMode()) {
+    console.log("enabled");
+    document.querySelector("link[rel='stylesheet']").href = "dark-mode.css";
+    darkModeButton.checked = true;
+    localStorage.setItem("darkMode", true);
+  } else {
+    console.log("disabled");
+  }
 };
