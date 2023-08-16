@@ -12,7 +12,7 @@ const darkMode = () => {
 const cssFilePath = "assets/css/";
 
 const hasDarkMode = () => {
-  if (darkMode() !== null || darkMode() === "true") return true;
+  if (darkMode() === "true") return true;
   else return false;
 };
 
@@ -33,6 +33,7 @@ if (hasDarkMode()) {
 }
 
 const changeColorMode = () => {
+  console.log(hasDarkMode());
   if (!hasDarkMode()) {
     console.log("enabled");
     document.querySelector(
@@ -42,5 +43,10 @@ const changeColorMode = () => {
     localStorage.setItem("darkMode", true);
   } else {
     console.log("disabled");
+    document.querySelector(
+      "link[rel='stylesheet']"
+    ).href = `${cssFilePath}/style.css`;
+    darkModeButton.checked = false;
+    localStorage.removeItem("darkMode");
   }
 };
