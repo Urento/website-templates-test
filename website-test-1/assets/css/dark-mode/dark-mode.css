@@ -33,6 +33,73 @@ body {
     width: 100%;
     height: 60px;
     text-align: center;
-    color: #000000;
-    background-color: white;
+    color: white;
+    background-color: black;
+}
+
+.topnav {
+    overflow: hidden;
+}
+
+.topnav a {
+    /*float: left;*/
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+    display: inline-block;
+    position: relative;
+
+    &:hover {
+        border-radius: 12%;
+    }
+}
+
+.topnav a.active {
+    color: white;
+    font-weight: bold;
+}
+
+.topnav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transform-origin: bottom right;
+}
+
+.topnav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.topnav-right {
+    float: right;
+}
+
+.lightmode-icon {
+    border: none;
+    background-color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.lightmode-icon:hover {
+    transition: color 0.5s
+}
+
+.title {
+    color: white;
+    font-size: 110%
+}
+
+.description {
+    color: white;
+    padding-left: 43px;
 }

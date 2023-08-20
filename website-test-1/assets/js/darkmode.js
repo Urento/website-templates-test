@@ -25,9 +25,6 @@ if (hasDarkMode()) {
   document.querySelector(
     "link[rel='stylesheet']"
   ).href = `${darkCSSFilePath}/dark-mode.css`;
-  document.querySelector(
-    "link[rel='stylesheet']"
-  ).href = `${darkCSSFilePath}/navbar-dark.css`;
   darkModeButton.checked = true;
   console.log("darkmode from page load");
 } else {
@@ -48,10 +45,6 @@ const changeColorMode = () => {
     document.querySelector(
       "link[rel='stylesheet']"
     ).href = `${darkCSSFilePath}/dark-mode.css`;
-    //update navbar stylesheet
-    document.querySelector(
-      "link[rel='stylesheet']"
-    ).href = `${darkCSSFilePath}/navbar-dark.css`;
     darkModeButton.checked = true;
     localStorage.setItem("darkMode", true);
   } else {
@@ -60,10 +53,6 @@ const changeColorMode = () => {
     document.querySelector(
       "link[rel='stylesheet']"
     ).href = `${cssFilePath}/style.css`;
-    //update navbar stylesheet
-    document.querySelector(
-      "link[rel='stylesheet']"
-    ).href = `${cssFilePath}/navbar.css`;
     darkModeButton.checked = false;
     localStorage.removeItem("darkMode");
   }
