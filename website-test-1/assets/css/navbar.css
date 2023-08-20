@@ -3,13 +3,16 @@
 }
 
 .topnav a {
-    float: left;
+    /*float: left;*/
     color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
     transition: color 0.5s;
+
+    display: inline-block;
+    position: relative;
 
     &:hover {
         background-color: #ddd;
@@ -19,10 +22,26 @@
 }
 
 .topnav a.active {
-    background-color: RGB(33, 150, 243);
-    opacity: 0.8;
-    color: white;
-    border-radius: 12%;
+    color: black;
+    font-weight: bold;
+}
+
+.topnav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.topnav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .topnav-right {
@@ -31,4 +50,5 @@
 
 .lightmode-icon {
     font-size: 130%;
+    border: none;
 }
