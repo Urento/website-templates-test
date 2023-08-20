@@ -4,6 +4,11 @@ body {
     letter-spacing: 0.7px;
 }
 
+/* necessary for dark mode */
+.iconColor {
+    color: black;
+}
+
 .button {
     display: inline-block;
     width: 100px;
