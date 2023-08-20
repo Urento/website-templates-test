@@ -49,6 +49,13 @@
 }
 
 .lightmode-icon {
-    font-size: 130%;
     border: none;
+    background-color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.lightmode-icon:hover {
+    transition: color 0.5s
 }

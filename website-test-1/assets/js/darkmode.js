@@ -7,12 +7,13 @@ const darkMode = () => {
     return true;
   else return false;
 };
-//add this later: window.matchMedia("(prefers-color-scheme: dark)").matches;
+//add this later to auto use account seetings:
+//window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 const cssFilePath = "assets/css/";
 
 const hasDarkMode = () => {
-  if (darkMode() === "true") return true;
+  if (darkMode() === true || darkMode() === "true") return true;
   else return false;
 };
 
@@ -33,7 +34,7 @@ if (hasDarkMode()) {
 }
 
 const changeColorMode = () => {
-  console.log(hasDarkMode());
+  console.log("dm before change:" + hasDarkMode());
   if (!hasDarkMode()) {
     console.log("enabled");
     document.querySelector(
