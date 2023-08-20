@@ -10,8 +10,8 @@ const darkMode = () => {
 //add this later to auto use account seetings:
 //window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-const cssFilePath = "assets/css/";
-const darkCSSFilePath = "assets/css/dark-mode/";
+const cssFilePath = "assets/css";
+const darkCSSFilePath = "assets/css/dark-mode";
 
 const hasDarkMode = () => {
   if (darkMode() === true || darkMode() === "true") return true;
@@ -56,9 +56,14 @@ const changeColorMode = () => {
     localStorage.setItem("darkMode", true);
   } else {
     console.log("disabled");
+    //update default stylesheet
     document.querySelector(
       "link[rel='stylesheet']"
     ).href = `${cssFilePath}/style.css`;
+    //update navbar stylesheet
+    document.querySelector(
+      "link[rel='stylesheet']"
+    ).href = `${cssFilePath}/navbar.css`;
     darkModeButton.checked = false;
     localStorage.removeItem("darkMode");
   }
