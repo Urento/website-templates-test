@@ -60,10 +60,6 @@ body {
 .topnav a.active {
     color: white;
     font-weight: bold;
-
-    &:hover {
-        color: black;
-    }
 }
 
 .topnav a::after {
