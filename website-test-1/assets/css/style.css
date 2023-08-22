@@ -86,6 +86,7 @@ body {
     float: right;
 }
 
+
 .lightmode-icon {
     border: none;
     background-color: white;
@@ -106,47 +107,4 @@ body {
 .description {
     color: black;
     padding-left: 43px;
-}
-
-.hidden-checkbox-side-menu {
-    display: none;
-}
-
-/* Menu Icon */
-.hamb {
-    cursor: pointer;
-    float: right;
-    padding: 40px 20px;
-}
-
-/* Style label tag */
-
-.hamb-line {
-    background: var(--white);
-    display: block;
-    height: 2px;
-    position: relative;
-    width: 24px;
-
-}
-
-/* Style span tag */
-
-.hamb-line::before,
-.hamb-line::after {
-    background: var(--white);
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all .2s ease-out;
-    width: 100%;
-}
-
-.hamb-line::before {
-    top: 5px;
-}
-
-.hamb-line::after {
-    top: -5px;
 }
