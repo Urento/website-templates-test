@@ -1,7 +1,5 @@
 "use client";
-import Image from "next/image";
 import { useEffect, useState } from "react";
-import logo_transparent from "../../assets/logo_transparent.png";
 
 export type Pages = "Startseite" | "Services" | "Portfolio" | "Kontakt";
 
@@ -11,16 +9,11 @@ export default function Navbar() {
   );
 
   useEffect(() => {
-    const handleRouteChange = () => {
-      console.log("Route changed");
-      setCurrentPath(window.location.pathname);
-    };
+    const handleRouteChange = () => setCurrentPath(window.location.pathname);
 
     window.addEventListener("popstate", handleRouteChange);
 
-    return () => {
-      window.removeEventListener("popstate", handleRouteChange);
-    };
+    return () => window.removeEventListener("popstate", handleRouteChange);
   }, []);
 
   // Function to determine if the link is active
@@ -40,9 +33,6 @@ export default function Navbar() {
     }
   };
 
-  console.log(currentPath);
-  console.log(isLinkActive("/"));
-
   //variables
   const navBarLinkTextColor = "text-gray-800 text-xl relative group";
   const boxAroundLink = (type: Pages) =>
@@ -53,11 +43,13 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="top-0 left-0 right-0 bg-blue-700 p-1 text-white z-10 flex items-center justify-center">
+      {/* ANNOUNCEMENT TICKER */}
+      <div className="top-0 left-0 right-0 bg-purple-700 p-1 text-white z-10 flex items-center justify-center">
         <p className="text-sm">
           <span className="font-bold">Hinweis:</span> miau
         </p>
       </div>
+      {/* NAVBAR */}
       <nav className="bg-white p-4">
         <div className="container mx-auto">
           <div className="flex items-center justify-between">
